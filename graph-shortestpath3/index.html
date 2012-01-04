@@ -1,0 +1,74 @@
+<html>
+<head>
+
+<script type="text/javascript" src="/_ah/channel/jsapi"></script>
+
+	
+	<title>{{ html_title }}</title>
+  	<script type="text/javascript" src="/javascript/graph.js" ></script>
+
+  	<link type="text/css" rel="stylesheet" href="/stylesheets/styles.css" />
+        <link type="text/css" rel="stylesheet" href="/stylesheets/buttons.css" />
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<div id="container">
+<div id="header"><h1>Shortest Path Algorithm - Floyd Warshall</h1></div>
+  <div id="wrapper">
+    <div id="content">
+      
+	
+		<form name="graph" >							
+			<div>
+				<div>
+					<h2>Instructions :-</h2>
+					<ul>
+						<li><b>Double click to draw vertices.</b></li>
+						<li><b>To draw edges, click on the first vertex and drag the mouse pointer to the second vertex.</b></li>
+						<li><b>You can specify the starting node and the ending node from which to display the shortest path in between , by using the text boxes given below.</b></li>
+						<li><b>'DISPLAY PATH' button will show the shortest path between the starting node and the ending node according to the values that you mentioned in the text boxes.</b></li>
+						<li><b>'SHOW ALL PATH' button will give you the shortest paths between all vertices by minimum weight in between starting node and ending node.(Weight is considered as the length of edge).</b></li>
+
+			<h3 style = 'color:red;'>IMP : Before you are going to make any changes in the graph that you have already drawn, or going to make any changes in the values that you already entered in the text boxes ,You must reset the canvas each time to its default state by using the 'RESET' button.</h3>
+					</ul>
+				</div>
+
+				<div align="center">
+					<canvas id="canvas" height="500px" width="900px" style="border:1px solid #c3c3c3; position:relative;"></canvas>
+				</div>
+			</div>
+		</form>
+		<div align="center">
+			<table>
+			
+			<td><h4>From</h4></td><td><h4><input type="text"id="tb1" name="tb1" size="6px"/></h4></td>
+			<td><h4>To</h4></td><td><h4><input type="text"id="tb2" name="tb2" size="6px"/></h4></td>
+			
+			<td><h4><button id="click" class="button">display path</button></h4></td>
+
+			
+			
+			<td><h4><button id="refresh"  class="button"><span>reset</span></button></h4></td>
+			
+			
+			
+			<td><h4><button id="btn2" name="btn2" class="button">show all path</button><br/></h4></td>
+                        <td><h4><button id="btn2" name="btn2" onclick="history.go()"class="button">clear</button><br/></h4></td>
+			
+			</tr>
+			</table>
+			<table>
+			<div><td><textarea name="text2" id="text2" cols="100" rows="10" align="right"></textarea></td></table></div>
+		</div>
+
+		
+      
+    </div>
+  
+  <div id="footer"><br><br><center>
+    <font size=2>Created by : <b>Sreehari k marar     </b> Contact : <b>sreeharikmarar@gmail.com </b></font><br><br>
+  </div>
+</div>
+</body>
+</html>
