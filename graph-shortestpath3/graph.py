@@ -22,7 +22,8 @@ class MainPage(webapp.RequestHandler):
             'html_body_text': html_body_text,
             }
         path = os.path.join(os.path.dirname(__file__), 'index.html')
-        self.response.out.write(template.render(path,template_values))
+        outstr = template.render(path,template_values)
+        self.response.out.write(unicode(outstr))
         
 class ShortestPath:
 	def GetPath (self,i,j,path,nxt,n):
@@ -44,8 +45,8 @@ class ShortestPath:
         	        return self.GetPath2(i,inter,path,nxt,n) +" %d "%inter+ self.GetPath2(inter,j,path,nxt,n)
 
 class AlgorithmWeights(webapp.RequestHandler):
-    	def __init__(self):
-        	webapp.RequestHandler.__init__(self)
+    	def __init__(self, request, response):
+        	self.initialize(request, response)
 	def post(self):
 		self.response.headers['Content-Type'] = "text/plain"
 		adj_list =self.request.get_all("adj[]")  #reading list that send from jquery post
@@ -132,8 +133,8 @@ class AlgorithmWeights(webapp.RequestHandler):
 
 		
 class BoxWeights(webapp.RequestHandler):
-    	def __init__(self):
-        	webapp.RequestHandler.__init__(self)
+    	def __init__(self, request, response):
+        	self.initialize(request, response)
 	def post(self):
 		self.response.headers['Content-Type'] = "text/plain"
 		adj_list =self.request.get_all("adj[]")  #reading list that send from jquery post
@@ -205,8 +206,8 @@ class BoxWeights(webapp.RequestHandler):
 		
                               	
 class Drawgraph(webapp.RequestHandler):
-	def __init__(self):
-        	webapp.RequestHandler.__init__(self)
+	def __init__(self, request, response):
+        	self.initialize(request, response)
 	def post(self):
 		self.response.headers['Content-Type'] = "text/plain"
 		adj_list =self.request.get_all("adj[]")  #reading list that send from jquery post

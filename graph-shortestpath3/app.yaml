@@ -1,6 +1,5 @@
-application: graph-shortestpath
-version: 8
-runtime: python
+runtime: python27
+threadsafe: false
 api_version: 1
 
 handlers:
@@ -18,5 +17,4 @@ handlers:
   
 - url: /.*
   script: graph.py
-  
 
